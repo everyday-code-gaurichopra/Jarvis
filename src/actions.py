@@ -142,7 +142,7 @@ voices = engine.getProperty("voices")
 config = configparser.ConfigParser()
 config.read('config.ini')
 
-if config['DEFAULT']['voice'] == 'Male':
+if config['DEFAULT'].get('voice', 'Male') == 'Male':
     engine.setProperty('voice', voices[0].id)
 else:
     engine.setProperty('voice', voices[1].id)
